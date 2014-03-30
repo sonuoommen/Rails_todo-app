@@ -1,0 +1,18 @@
+.container
+  -if @task.empty?
+    %span.text-warning You have not added any task yet !!
+  -else
+    %table.table.table-hover.table-bordered
+      %thead
+        %tr
+          %th Title
+          %th Created at
+          %th Completed
+      %tbody
+        -@task.each do |task|
+          %tr
+            %td
+              %strong= task.title
+            %td.text-info=task.created_at
+            %td.text-success= task.completed
+#modal.modal.fade
